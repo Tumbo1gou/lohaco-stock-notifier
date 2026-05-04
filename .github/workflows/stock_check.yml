@@ -2,8 +2,9 @@ name: LOHACO 在庫チェック
 
 on:
   schedule:
-    # 5分ごとに実行（GitHub Actions の最短間隔）
-    - cron: '*/5 * * * *'
+    # 5分ごとに実行（毎時2,7,12,17,22,27,32,37,42,47,52,57分）
+    # 0分・5分・10分などはGitHub混雑時間帯のためずらしている
+    - cron: '2-59/5 * * * *'
   workflow_dispatch:  # 手動実行ボタン
 
 permissions:
